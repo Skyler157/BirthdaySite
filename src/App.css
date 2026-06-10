@@ -1,0 +1,33 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+}
+
+.app-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
+  font-family: var(--font-elegant);
+  font-style: italic;
+  color: var(--pink-light);
+  opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+  .app-footer {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    font-size: 0.9rem;
+  }
+}
+
+.footer-year {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  opacity: 0.6;
+}

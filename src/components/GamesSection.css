@@ -1,0 +1,80 @@
+.games-section {
+  padding-top: 7rem;
+}
+
+.game-tabs {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.game-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 182, 213, 0.3);
+  background: rgba(255, 240, 245, 0.08);
+  color: var(--pink-light);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-tab:hover {
+  background: rgba(255, 240, 245, 0.15);
+  border-color: rgba(255, 182, 213, 0.5);
+}
+
+.game-tab.active {
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-velvet));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 20px rgba(233, 30, 140, 0.4);
+}
+
+.tab-icon {
+  font-size: 1.1rem;
+}
+
+.game-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .games-section {
+    padding-top: 5rem;
+  }
+
+  .game-tabs {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .game-tab {
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .game-tab {
+    justify-content: center;
+    width: 100%;
+  }
+}

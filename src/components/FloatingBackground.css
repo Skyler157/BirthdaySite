@@ -1,0 +1,91 @@
+.floating-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.bg-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--pink-main);
+  top: -100px;
+  right: -100px;
+  animation: float 12s ease-in-out infinite;
+}
+
+.bg-glow-2 {
+  width: 350px;
+  height: 350px;
+  background: var(--pink-velvet);
+  bottom: 10%;
+  left: -80px;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+.bg-glow-3 {
+  width: 300px;
+  height: 300px;
+  background: var(--pink-bloom);
+  top: 40%;
+  right: 20%;
+  animation: float 18s ease-in-out infinite 2s;
+}
+
+.bg-star {
+  position: absolute;
+  background: var(--pink-shimmer);
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--pink-glow);
+}
+
+.bg-emoji {
+  position: absolute;
+  bottom: -5%;
+  opacity: 0;
+  animation: drift linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 110, 180, 0.4));
+}
+
+.shooting-star {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink-shimmer), white);
+  border-radius: 2px;
+  opacity: 0;
+  animation: shootingStar 6s ease-in infinite;
+  animation-delay: 4s;
+}
+
+@media (max-width: 640px) {
+  .bg-glow-1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .bg-glow-2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bg-glow-3 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bg-emoji {
+    display: none;
+  }
+}

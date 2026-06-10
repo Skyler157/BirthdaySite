@@ -1,0 +1,219 @@
+.constellation-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(420px, 92vw);
+  height: 100px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.constellation-nav.visible {
+  opacity: 1;
+}
+
+.constellation-nav.nav-game-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-120%);
+}
+
+.constellation-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.constellation-stars {
+  position: absolute;
+  inset: 0;
+}
+
+.constellation-line {
+  stroke: rgba(255, 182, 213, 0.25);
+  stroke-width: 0.4;
+  stroke-dasharray: 2 2;
+}
+
+.constellation-star {
+  position: absolute;
+  left: var(--star-x);
+  top: var(--star-y);
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.star-core {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--pink-shimmer);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.star-glow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgba(255, 110, 180, 0.4), transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.constellation-star.active .star-core,
+.constellation-star.hovered .star-core {
+  width: 14px;
+  height: 14px;
+  background: white;
+  box-shadow: 0 0 20px var(--pink-glow), 0 0 40px rgba(255, 110, 180, 0.5);
+}
+
+.constellation-star.active .star-glow,
+.constellation-star.hovered .star-glow {
+  opacity: 1;
+}
+
+.star-icon {
+  position: absolute;
+  top: -8px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.constellation-star.active .star-icon,
+.constellation-star.hovered .star-icon {
+  opacity: 1;
+  transform: translateY(-18px);
+}
+
+.star-label {
+  position: absolute;
+  bottom: -22px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--pink-light);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(233, 30, 140, 0.5);
+}
+
+.constellation-star.active .star-label,
+.constellation-star.hovered .star-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile: bottom tab bar */
+@media (max-width: 640px) {
+  .constellation-nav {
+    top: auto;
+    bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    height: auto;
+    width: calc(100% - 1.25rem);
+    max-width: 400px;
+    padding: 0.45rem 0.5rem;
+    background: rgba(45, 10, 30, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 182, 213, 0.3);
+    box-shadow: 0 8px 32px rgba(45, 10, 30, 0.5);
+  }
+
+  .constellation-nav.nav-game-hidden {
+    transform: translateX(-50%) translateY(150%);
+  }
+
+  .constellation-lines {
+    display: none;
+  }
+
+  .constellation-stars {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    inset: auto;
+  }
+
+  .constellation-star {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    transform: none;
+    flex: 1;
+    flex-direction: column;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    gap: 0.15rem;
+    padding: 0.35rem 0.15rem;
+  }
+
+  .star-core {
+    position: relative;
+    width: 8px;
+    height: 8px;
+  }
+
+  .constellation-star.active .star-core {
+    width: 10px;
+    height: 10px;
+  }
+
+  .star-glow {
+    display: none;
+  }
+
+  .star-icon {
+    position: relative;
+    top: auto;
+    opacity: 1;
+    transform: none;
+  }
+
+  .star-label {
+    position: relative;
+    bottom: auto;
+    font-size: 0.55rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 4.5rem;
+    opacity: 0.65;
+    transform: none;
+  }
+
+  .constellation-star.active .star-label {
+    opacity: 1;
+    color: var(--pink-shimmer);
+  }
+}
+
+@media (max-width: 380px) {
+  .star-label {
+    font-size: 0.5rem;
+    max-width: 3.8rem;
+  }
+}

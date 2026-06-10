@@ -1,0 +1,13 @@
+.apple-emoji {
+  display: inline-block;
+  vertical-align: -0.15em;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.emoji-fallback {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  display: inline-block;
+  line-height: 1;
+}

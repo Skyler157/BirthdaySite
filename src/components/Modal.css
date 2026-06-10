@@ -1,0 +1,239 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 10, 30, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  animation: fadeInUp 0.4s ease;
+}
+
+.modal-header {
+  flex-shrink: 0;
+  position: relative;
+  padding: 2.5rem 3.5rem 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 182, 213, 0.15);
+  background: inherit;
+  z-index: 2;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(45, 10, 30, 0.5);
+  border: 1px solid rgba(255, 182, 213, 0.4);
+  color: var(--pink-light);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.modal-close:hover {
+  background: rgba(233, 30, 140, 0.5);
+  color: white;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--pink-blush);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.5rem 2rem 2rem;
+  font-family: var(--font-elegant);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pink-pale);
+  white-space: pre-line;
+}
+
+/* ── Open When letter themes ── */
+.modal-letter {
+  border-radius: 24px;
+  border: 1px solid rgba(255, 182, 213, 0.35);
+  box-shadow: 0 16px 48px rgba(45, 10, 30, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.modal-letter .modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.modal-letter .modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.modal-letter .modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Loved — warm rose blush */
+.modal-letter--loved {
+  background: linear-gradient(155deg, #7a2856 0%, #b83280 45%, #d44d9a 100%);
+}
+.modal-letter--loved .modal-title { color: #fff5f8; }
+.modal-letter--loved .modal-body { color: #fce4ec; }
+
+/* Hard day — soft muted mauve */
+.modal-letter--hard-day {
+  background: linear-gradient(155deg, #4f2a42 0%, #6b3d58 50%, #8a5272 100%);
+}
+.modal-letter--hard-day .modal-title { color: #f3e0eb; }
+.modal-letter--hard-day .modal-body { color: #ecd5e4; }
+
+/* Miss me — deep twilight pink */
+.modal-letter--miss-me {
+  background: linear-gradient(155deg, #2d0a22 0%, #4a1942 40%, #6b2d5e 100%);
+}
+.modal-letter--miss-me .modal-title { color: #f8e8f2; }
+.modal-letter--miss-me .modal-body { color: #e8d0e0; }
+
+/* Accomplished — bright celebratory fuchsia */
+.modal-letter--accomplished {
+  background: linear-gradient(155deg, #8b1a5c 0%, #c2185b 45%, #e91e8c 100%);
+}
+.modal-letter--accomplished .modal-title { color: #ffffff; }
+.modal-letter--accomplished .modal-body { color: #ffe8f2; }
+
+/* Motivation — fiery magenta */
+.modal-letter--motivation {
+  background: linear-gradient(155deg, #5c1238 0%, #9d174d 50%, #db2777 100%);
+}
+.modal-letter--motivation .modal-title { color: #fff0f6; }
+.modal-letter--motivation .modal-body { color: #ffd6e8; }
+
+/* Doubtful — gentle dusty rose */
+.modal-letter--doubtful {
+  background: linear-gradient(155deg, #5a3548 0%, #7a4a62 50%, #9a6880 100%);
+}
+.modal-letter--doubtful .modal-title { color: #faf0f5; }
+.modal-letter--doubtful .modal-body { color: #efe0e8; }
+
+/* Procrastinating — mellow warm pink */
+.modal-letter--procrastinating {
+  background: linear-gradient(155deg, #7a3d5c 0%, #a8557a 45%, #d4789a 100%);
+}
+.modal-letter--procrastinating .modal-title { color: #fff8fa; }
+.modal-letter--procrastinating .modal-body { color: #fce8f0; }
+
+/* Sleepless — hushed lavender pink */
+.modal-letter--sleepless {
+  background: linear-gradient(155deg, #3d1f38 0%, #5c3a5a 50%, #7d5580 100%);
+}
+.modal-letter--sleepless .modal-title { color: #f0e4f0; }
+.modal-letter--sleepless .modal-body { color: #ddd0e0; }
+
+/* Birthday — sparkling hot pink */
+.modal-letter--birthday {
+  background: linear-gradient(155deg, #a0155a 0%, #d61f7a 35%, #f06292 70%, #f9a8d4 100%);
+}
+.modal-letter--birthday .modal-title { color: #ffffff; text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+.modal-letter--birthday .modal-body { color: #fff5fa; }
+
+/* Hug — warm peach-rose embrace */
+.modal-letter--hug {
+  background: linear-gradient(155deg, #6b3048 0%, #9a4568 50%, #c25a82 100%);
+}
+.modal-letter--hug .modal-title { color: #fff8fa; }
+.modal-letter--hug .modal-body { color: #fce8f0; }
+
+/* Anxious — calm soft pink mist */
+.modal-letter--anxious {
+  background: linear-gradient(155deg, #4a3858 0%, #6e5578 45%, #9478a0 100%);
+}
+.modal-letter--anxious .modal-title { color: #f5eef8; }
+.modal-letter--anxious .modal-body { color: #e8dde8; }
+
+/* Proud — regal deep velvet pink */
+.modal-letter--proud {
+  background: linear-gradient(155deg, #4a0e2e 0%, #831843 45%, #be185d 100%);
+}
+.modal-letter--proud .modal-title { color: #fff8e8; }
+.modal-letter--proud .modal-body { color: #ffe4f0; }
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-radius: 20px 20px 16px 16px;
+  }
+
+  .modal-header {
+    padding: 2rem 3rem 0.85rem 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .modal-letter {
+    border-radius: 20px 20px 16px 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,4 @@
+.empty-basket {
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(233, 30, 140, 0.35));
+}

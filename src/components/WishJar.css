@@ -1,0 +1,177 @@
+.wish-jar {
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.jar-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  transition: transform 0.3s ease;
+}
+
+.jar-scene.shaking {
+  animation: jarShake 0.8s ease;
+}
+
+@keyframes jarShake {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-4deg); }
+  30% { transform: rotate(4deg); }
+  45% { transform: rotate(-3deg); }
+  60% { transform: rotate(3deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+.jar-scene.sparkling .jar-glow {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.jar-lid {
+  font-size: 1.5rem;
+  margin-bottom: -8px;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.jar-body {
+  width: 160px;
+  height: 200px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 240, 245, 0.15) 0%,
+    rgba(255, 182, 213, 0.1) 50%,
+    rgba(233, 30, 140, 0.15) 100%
+  );
+  border: 2px solid rgba(255, 182, 213, 0.4);
+  border-radius: 20px 20px 30px 30px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.jar-glow {
+  position: absolute;
+  inset: 20%;
+  background: radial-gradient(circle, rgba(255, 110, 180, 0.4), transparent);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.6s ease;
+}
+
+.jar-papers {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+
+.jar-paper {
+  font-size: 1.2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.jar-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--pink-light);
+  white-space: nowrap;
+}
+
+.jar-base {
+  width: 120px;
+  height: 12px;
+  background: rgba(255, 182, 213, 0.2);
+  border-radius: 0 0 8px 8px;
+  margin-top: -2px;
+}
+
+.jar-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.jar-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.wish-reveal {
+  margin-top: 1.5rem;
+  animation: fadeInUp 0.6s ease;
+}
+
+.wish-paper {
+  background: linear-gradient(135deg, var(--pink-pale), var(--pink-blush));
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(233, 30, 140, 0.2);
+  transform: rotate(-1deg);
+}
+
+.wish-paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink-soft) 0px,
+    var(--pink-soft) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.wish-deco {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.wish-paper p {
+  font-family: var(--font-elegant);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--pink-deep);
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .wish-jar {
+    padding: 1.25rem;
+  }
+
+  .jar-body {
+    width: 140px;
+    height: 175px;
+  }
+
+  .jar-base {
+    width: 105px;
+  }
+
+  .wish-paper {
+    padding: 1.25rem;
+  }
+
+  .wish-paper p {
+    font-size: 1.05rem;
+  }
+}

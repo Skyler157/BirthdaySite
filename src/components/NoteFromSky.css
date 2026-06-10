@@ -1,0 +1,200 @@
+.note-section {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+}
+
+.sky-note {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(
+    170deg,
+    rgba(255, 240, 245, 0.95) 0%,
+    rgba(252, 228, 236, 0.92) 50%,
+    rgba(248, 187, 217, 0.88) 100%
+  );
+  border-radius: 4px;
+  box-shadow:
+    0 2px 4px rgba(92, 26, 62, 0.1),
+    0 20px 60px rgba(45, 10, 30, 0.3),
+    inset 0 0 80px rgba(255, 182, 213, 0.15);
+  color: var(--pink-deep);
+  animation: fadeInUp 0.8s ease;
+}
+
+.note-texture {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e91e8c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.note-corner {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.note-corner-tl {
+  top: 1rem;
+  left: 1rem;
+}
+
+.note-corner-br {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.note-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.note-date {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--pink-rich);
+  opacity: 0.7;
+}
+
+.note-greeting {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--pink-velvet);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.note-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
+}
+
+.divider-ornament,
+.divider-heart {
+  color: var(--pink-main);
+  font-size: 0.9rem;
+}
+
+.divider-heart {
+  font-size: 1rem;
+}
+
+.note-body {
+  position: relative;
+}
+
+.note-body p {
+  font-family: var(--font-elegant);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--pink-deep);
+  margin-bottom: 1.2rem;
+  text-indent: 1.5rem;
+}
+
+.note-body p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  color: var(--pink-velvet);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.note-divider-bottom {
+  margin-top: 2rem;
+}
+
+.note-footer {
+  text-align: right;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.note-closing {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--pink-rich);
+  margin-bottom: 0.5rem;
+}
+
+.note-signature {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--pink-velvet);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.signature-emoji {
+  margin-left: 0.3rem;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .note-section {
+    padding-top: 5rem;
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 640px) {
+  .sky-note {
+    padding: 2rem 1.25rem;
+    border-radius: 4px;
+  }
+
+  .note-greeting {
+    font-size: 1.35rem;
+  }
+
+  .note-body p {
+    font-size: 1.02rem;
+    text-indent: 1rem;
+    line-height: 1.8;
+  }
+
+  .note-body p:first-child::first-letter {
+    font-size: 2.2rem;
+  }
+
+  .note-signature {
+    font-size: 1.6rem;
+  }
+
+  .note-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 380px) {
+  .sky-note {
+    padding: 1.5rem 1rem;
+  }
+
+  .note-body p {
+    font-size: 0.95rem;
+  }
+}
