@@ -24,7 +24,7 @@ function HomePage() {
   };
 
   return (
-    <section id="home" className="section home-section">
+    <section id="home" className={`section home-section ${opened ? "home-section--opened" : ""}`}>
       <div className={`gift-scene ${opened ? "opened" : ""}`}>
         {!opened && (
           <button className="gift-box" onClick={openGift} aria-label="Open your birthday gift">

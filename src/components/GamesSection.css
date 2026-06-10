@@ -1,5 +1,6 @@
 .games-section {
-  padding-top: 7rem;
+  padding-top: 3rem;
+  min-height: auto;
 }
 
 .game-tabs {
@@ -51,7 +52,7 @@
 
 @media (max-width: 768px) {
   .games-section {
-    padding-top: 5rem;
+    padding-top: 2rem;
   }
 
   .game-tabs {

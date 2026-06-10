@@ -3,6 +3,12 @@
   padding-top: 8rem;
 }
 
+.home-section--opened {
+  min-height: auto;
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+}
+
 .gift-scene {
   position: relative;
   display: flex;
@@ -10,6 +16,11 @@
   align-items: center;
   min-height: 50vh;
   justify-content: center;
+}
+
+.gift-scene.opened {
+  min-height: auto;
+  justify-content: flex-start;
 }
 
 .gift-box {
@@ -150,7 +161,7 @@
   max-width: 600px;
   width: 100%;
   padding: 1.5rem 2rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   text-align: center;
   font-family: var(--font-elegant);
   font-size: 1.15rem;
@@ -188,10 +199,14 @@
     flex-wrap: wrap;
   }
 
+  .home-section--opened {
+    padding-bottom: 1.5rem;
+  }
+
   .home-welcome {
     padding: 1.25rem 1.25rem;
     font-size: 1.05rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 
