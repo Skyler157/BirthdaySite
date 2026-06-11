@@ -72,6 +72,10 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: 1.5rem 2rem 2rem;
   font-family: var(--font-elegant);
   font-size: 1.1rem;
@@ -189,17 +193,29 @@
 @media (max-width: 640px) {
   .modal-overlay {
     padding: 0.75rem;
-    align-items: flex-end;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    align-items: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .modal-content {
-    max-height: 92vh;
-    max-height: 92dvh;
-    border-radius: 20px 20px 16px 16px;
+    max-height: none;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: visible;
   }
 
   .modal-header {
+    position: sticky;
+    top: 0;
     padding: 2rem 3rem 0.85rem 1.25rem;
+    z-index: 5;
+    border-radius: 20px 20px 0 0;
   }
 
   .modal-title {
@@ -207,6 +223,9 @@
   }
 
   .modal-body {
+    flex: none;
+    min-height: auto;
+    overflow: visible;
     padding: 1.25rem 1.25rem 1.5rem;
     font-size: 1rem;
     line-height: 1.75;
@@ -220,7 +239,11 @@
   }
 
   .modal-letter {
-    border-radius: 20px 20px 16px 16px;
+    border-radius: 20px;
+  }
+
+  .modal-letter .modal-header {
+    background: inherit;
   }
 }
 
